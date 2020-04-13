@@ -97,7 +97,15 @@ class Graph:
         This should be done using recursion.
         """
         # Add visited as a cache
-        # Base case if starting vertex is empty
+        # Base case if vertex not in visited
+        if starting_vertex in visited:
+            return
+
+        print(starting_vertex)
+        visited.add(starting_vertex)
+
+        for next_vert in self.get_neighbors(starting_vertex):
+            self.dft_recursive(next_vert, visited)
 
         # If starting vertex not in visited then print
         # For each neighbor run function again
