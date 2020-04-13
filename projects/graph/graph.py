@@ -87,7 +87,7 @@ class Graph:
                 for next_vert in self.get_neighbors(path[-1]):
                     new_path = list(path)
                     new_path.append(next_vert)
-                    stack.pop(new_path)
+                    stack.push(new_path)
 
     def dft_recursive(self, starting_vertex):
         """
